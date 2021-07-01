@@ -1,20 +1,26 @@
 <script lang="ts">
+  import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
+
   import handleNumberInput from './handleNumberInput';
   import isValidCreditCard from './isValidCreditCard';
   import { number } from './store';
 
   let error;
+  let cardNumberLength;
+  $: cardNumberLength =
+    getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
+      ? 15
+      : 16;
 
-  const handleChange = (event) => {
-    if ($number.length === 16) {
+  const handleChange = () => {
+    if ($number.length === cardNumberLength) {
       if (!isValidCreditCard($number)) {
         error = true;
-      } else {
-        error = false;
       }
+    } else {
+      error = false;
     }
   };
-  let maxCardlength = 16;
 </script>
 
 <label for="cardNumber">Card Number</label>
@@ -24,7 +30,7 @@
   bind:value={$number}
   on:keypress={handleNumberInput}
   on:keyup={handleChange}
-  maxlength={maxCardlength}
+  maxlength={cardNumberLength}
   class={error ? 'card__number--error' : ''}
 />
 {#if error}<p class="card__number-error-message">That seems wrong</p>{/if}

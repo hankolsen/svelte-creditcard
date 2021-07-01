@@ -1,20 +1,30 @@
 <script lang="ts">
   import InlineSVG from 'svelte-inline-svg';
   import CardExpiriation from './CardExpiriation.svelte';
-  import getCreditCardIssuer from './getCardIssuer';
+  import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
   import { name, number, showLogo } from './store';
-
-  $: formattedNumber = ($number ?? '')
-    .padEnd(16, '#')
-    .match(/([\d|#]{1,4})/g)
-    ?.join(' ');
 
   let src;
   let logoIsVisible;
+  let formattedNumber;
   $: {
     const issuer = getCreditCardIssuer($number);
     src = `logos/${issuer}.svg`;
     logoIsVisible = issuer && $showLogo;
+
+    if (issuer === CreditCardIssuers.AMERICANEXPRESS) {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      const [_, ...amexNumbers] =
+        ($number ?? '')
+          .padEnd(15, '#')
+          .match(/([\d|#]{1,4})([\d|#]{1,6})([\d|#]{1,5})/) || [];
+      formattedNumber = amexNumbers.join(' ');
+    } else {
+      formattedNumber = ($number ?? '')
+        .padEnd(16, '#')
+        .match(/([\d|#]{1,4})/g)
+        ?.join(' ');
+    }
   }
 </script>
 
