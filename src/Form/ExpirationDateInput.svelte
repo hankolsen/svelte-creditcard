@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { expireMonth, expireYear } from './store';
+  import { expireMonth, expireYear } from '@/store';
 
   const thisMonth = new Date().getMonth() + 1;
   const months = Array(12)

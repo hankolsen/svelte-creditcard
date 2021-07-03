@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { expireMonth, expireYear } from './store';
-
+  import { expireMonth, expireYear } from '@/store';
 </script>
+
 <div class="card__expiration-wrapper">
   <div class="card__expiration-month-wrapper">
     <div class="card__expiration-month">

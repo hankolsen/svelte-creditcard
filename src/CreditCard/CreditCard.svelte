@@ -1,18 +1,19 @@
 <script lang="ts">
-  import CardFront from './CardFront.svelte';
-  import CardBack from './CardBack.svelte';
+  import CardFront from '@/CreditCard/CardFront.svelte';
+  import CardBack from '@/CreditCard/CardBack.svelte';
 
-  import { isFlipped, showLogo } from './store';
+  import { isFlipped, showLogo } from '@/store';
 
+  // flipClass should not be set on load!
+  // It is needed to animate the "return" rotation from back to front
+  let flipClass = '';
+  
   const onAnimationStart = () => {
     setTimeout(() => {
       showLogo.set(flipClass !== 'card--flipp');
     }, 150);
   };
-  
-  // flipClass should not be set on load!
-  // It is needed to animate the "return" rotation from back to front
-  let flipClass = '';
+
   $: {
     if ($isFlipped !== undefined) {
       flipClass = $isFlipped ? 'card--flipp' : 'card--flopp';

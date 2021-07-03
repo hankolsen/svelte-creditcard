@@ -1,16 +1,17 @@
 <script lang="ts">
-  import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
-
-  import handleNumberInput from './handleNumberInput';
-  import isValidCreditCard from './isValidCreditCard';
-  import { number } from './store';
+  import { number } from '@/store';
+  import getCreditCardIssuer, {
+    CreditCardIssuers,
+  } from '@/getCardIssuer/getCardIssuer';
+  import isValidCreditCard from '@/isValidCreditCard/isValidCreditCard';
+  import handleNumberInput from '@/handleNumberInput/handleNumberInput';
 
   let error;
   let cardNumberLength;
-  $: cardNumberLength =
-    getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
-      ? 15
-      : 16;
+  // prettier-ignore
+  $: cardNumberLength = getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
+    ? 15
+    : 16;
 
   const handleChange = () => {
     if ($number.length === cardNumberLength) {

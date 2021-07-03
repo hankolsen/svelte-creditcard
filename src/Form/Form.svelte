@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { name } from './store';
   import CardNumberInput from './CardNumberInput.svelte';
   import ExpirationDateInput from './ExpirationDateInput.svelte';
   import CvvInput from './CvvInput.svelte';
+  import CardNameInput from './CardNameInput.svelte';
 
   const handleSubmit = (event: Event) => {
     event.preventDefault();
@@ -15,8 +15,7 @@
       <CardNumberInput />
     </fieldset>
     <fieldset>
-      <label for="cardName">Card Name</label>
-      <input name="cardName" id="cardName" bind:value={$name} maxlength="26" />
+      <CardNameInput />
     </fieldset>
     <fieldset class="row">
       <ExpirationDateInput />

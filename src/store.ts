@@ -1,6 +1,6 @@
 import { derived, Readable, writable, Writable } from 'svelte/store';
-import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
-import getFormattedCardNumber from './getFormattedCardNumber';
+import getCreditCardIssuer from '@/getCardIssuer/getCardIssuer';
+import getFormattedCardNumber from '@/getFormattedCardNumber/getFormattedCardNumber';
 
 export const name: Writable<string> = writable('');
 export const number: Writable<string> = writable(undefined);
