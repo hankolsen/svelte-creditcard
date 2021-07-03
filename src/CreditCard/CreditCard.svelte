@@ -9,7 +9,7 @@
       showLogo.set(flipClass !== 'card--flipp');
     }, 150);
   };
-  
+
   // flipClass should not be set on load!
   // It is needed to animate the "return" rotation from back to front
   let flipClass = '';

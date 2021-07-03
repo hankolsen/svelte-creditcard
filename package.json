@@ -19,6 +19,7 @@
     "@testing-library/svelte": "^3.0.3",
     "@tsconfig/svelte": "^2.0.0",
     "@types/jest": "^26.0.23",
+    "eslint-import-resolver-alias": "^1.1.2",
     "jest": "^27.0.6",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
