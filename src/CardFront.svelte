@@ -1,39 +1,15 @@
 <script lang="ts">
   import InlineSVG from 'svelte-inline-svg';
   import CardExpiriation from './CardExpiriation.svelte';
-  import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
-  import { name, number, showLogo } from './store';
-
-  let src;
-  let logoIsVisible;
-  let formattedNumber;
-  $: {
-    const issuer = getCreditCardIssuer($number);
-    src = `logos/${issuer}.svg`;
-    logoIsVisible = issuer && $showLogo;
-
-    if (issuer === CreditCardIssuers.AMERICANEXPRESS) {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      const [_, ...amexNumbers] =
-        ($number ?? '')
-          .padEnd(15, '#')
-          .match(/([\d|#]{1,4})([\d|#]{1,6})([\d|#]{1,5})/) || [];
-      formattedNumber = amexNumbers.join(' ');
-    } else {
-      formattedNumber = ($number ?? '')
-        .padEnd(16, '#')
-        .match(/([\d|#]{1,4})/g)
-        ?.join(' ');
-    }
-  }
+  import { name, formattedNumber, logoSrc } from './store';
 </script>
 
 <div class="card__face card__front">
   <div class="card__logo">
-    {#if logoIsVisible}<InlineSVG {src} />{/if}
+    {#if $logoSrc}<InlineSVG src={$logoSrc} />{/if}
   </div>
   <div class="card__content">
-    <div class="card__number">{formattedNumber}</div>
+    <div class="card__number">{$formattedNumber}</div>
     <div class="card__name-expiration-wrapper">
       <div>
         <div class="card__label">Card Holder</div>

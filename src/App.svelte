@@ -7,6 +7,5 @@
 	<div>
 		<CreditCard />
 		<Form />
-
 	</div>
 </div>

@@ -1,12 +1,6 @@
 <script lang="ts">
   import CardExpiration from './CardExpiriation.svelte';
-  import { cvv, name, number } from './store';
-
-  $: formattedNumber = ($number ?? '')
-    .padEnd(16, '#')
-    .match(/([\d|#]{1,4})/g)
-    ?.join(' ');
-
+  import { cvv, name, formattedNumber } from './store';
 </script>
 
 <div class="card__face card__back">
@@ -17,7 +11,7 @@
     </div>
   </div>
   <div class="card__content">
-    <div class="card__number">{formattedNumber}</div>
+    <div class="card__number">{$formattedNumber}</div>
     <div class="card__name-expiration-wrapper">
       <div class="card__name">{$name}</div>
       <CardExpiration />
