@@ -1,4 +1,4 @@
-import { CreditCardIssuers } from '../getCardIssuer/getCardIssuer';
+import { CreditCardIssuers } from '@/getCardIssuer/getCardIssuer';
 import getFormattedCardNumber from './getFormattedCardNumber';
 
 describe('getFormattedCardNumber test', () => {

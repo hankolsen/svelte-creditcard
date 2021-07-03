@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { cvv, name, formattedNumber } from '@/store';
   import CardExpiration from './CardExpiriation.svelte';
-  import { cvv, name, formattedNumber } from '../store';
 </script>
 
 <div class="card__face card__back">

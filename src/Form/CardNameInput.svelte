@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { name } from '../store';
+  import { name } from '@/store';
 </script>
 
 <label for="cardName">Card Name</label>
