@@ -1,7 +1,7 @@
 <script lang="ts">
   import InlineSVG from 'svelte-inline-svg';
   import CardExpiriation from './CardExpiriation.svelte';
-  import { name, formattedNumber, logoSrc } from './store';
+  import { name, formattedNumber, logoSrc } from '../store';
 </script>
 
 <div class="card__face card__front">

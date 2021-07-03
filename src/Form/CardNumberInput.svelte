@@ -1,9 +1,10 @@
 <script lang="ts">
-  import getCreditCardIssuer, { CreditCardIssuers } from './getCardIssuer';
-
-  import handleNumberInput from './handleNumberInput';
-  import isValidCreditCard from './isValidCreditCard';
-  import { number } from './store';
+  import getCreditCardIssuer, {
+    CreditCardIssuers,
+  } from '../getCardIssuer/getCardIssuer';
+  import isValidCreditCard from '../isValidCreditCard/isValidCreditCard';
+  import handleNumberInput from '../handleNumberInput/handleNumberInput';
+  import { number } from '../store';
 
   let error;
   let cardNumberLength;

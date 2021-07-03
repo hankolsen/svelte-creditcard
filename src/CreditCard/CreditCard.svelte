@@ -1,8 +1,8 @@
 <script lang="ts">
-  import CardFront from './CardFront.svelte';
-  import CardBack from './CardBack.svelte';
+  import CardFront from './CreditCard/CardFront.svelte';
+  import CardBack from './CreditCard/CardBack.svelte';
 
-  import { isFlipped, showLogo } from './store';
+  import { isFlipped, showLogo } from '../store';
 
   const onAnimationStart = () => {
     setTimeout(() => {

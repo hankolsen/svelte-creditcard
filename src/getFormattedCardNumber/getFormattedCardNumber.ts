@@ -1,4 +1,4 @@
-import { CreditCardIssuers } from './getCardIssuer';
+import { CreditCardIssuers } from '../getCardIssuer/getCardIssuer';
 
 const getFormattedCardNumber = ([$number, $issuer]) => {
   if ($issuer === CreditCardIssuers.AMERICANEXPRESS) {

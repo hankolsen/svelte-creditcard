@@ -1,6 +1,6 @@
 <script lang="ts">
-  import handleNumberInput from './handleNumberInput';
-  import { cvv, isFlipped } from './store';
+  import handleNumberInput from '../handleNumberInput/handleNumberInput';
+  import { cvv, isFlipped } from '../store';
 
   const maxCvvLength = 3;
 

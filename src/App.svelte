@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CreditCard from './CreditCard.svelte'
-	import Form from './Form.svelte'
+	import Form from './Form/Form.svelte'
 </script>
 
 <div class="wrapper">
