@@ -20,13 +20,11 @@
   "settings": {
     "svelte3/typescript": true,
     "import/resolver": {
-        "alias": {
-          "map": [
-            ["@", "./src"]
-          ],
-        
-        }
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".ts", ".js", ".svelte", ".json"]
       }
+    }
   },
   "rules": {
     "import/first": 0

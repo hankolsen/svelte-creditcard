@@ -4,15 +4,16 @@
 
   import { isFlipped, showLogo } from '@/store';
 
+  // flipClass should not be set on load!
+  // It is needed to animate the "return" rotation from back to front
+  let flipClass = '';
+  
   const onAnimationStart = () => {
     setTimeout(() => {
       showLogo.set(flipClass !== 'card--flipp');
     }, 150);
   };
 
-  // flipClass should not be set on load!
-  // It is needed to animate the "return" rotation from back to front
-  let flipClass = '';
   $: {
     if ($isFlipped !== undefined) {
       flipClass = $isFlipped ? 'card--flipp' : 'card--flopp';

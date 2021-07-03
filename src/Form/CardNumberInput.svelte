@@ -8,10 +8,10 @@
 
   let error;
   let cardNumberLength;
-  $: cardNumberLength =
-    getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
-      ? 15
-      : 16;
+  // prettier-ignore
+  $: cardNumberLength = getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
+    ? 15
+    : 16;
 
   const handleChange = () => {
     if ($number.length === cardNumberLength) {
