@@ -6,8 +6,8 @@
   import isValidCreditCard from '@/isValidCreditCard/isValidCreditCard';
   import handleNumberInput from '@/handleNumberInput/handleNumberInput';
 
-  let error;
-  let cardNumberLength;
+  let error: boolean;
+  let cardNumberLength: number;
   // prettier-ignore
   $: cardNumberLength = getCreditCardIssuer($number) === CreditCardIssuers.AMERICANEXPRESS
     ? 15

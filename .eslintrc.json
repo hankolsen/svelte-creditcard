@@ -10,11 +10,17 @@
     "sourceType": "module"
   },
   "ignorePatterns": ["**/build/*"],
-  "plugins": ["@typescript-eslint", "svelte3"],
+  "plugins": ["@typescript-eslint", "svelte3", "jest-dom"],
   "overrides": [
     {
       "files": ["*.svelte"],
       "processor": "svelte3/svelte3"
+    },
+    {
+      "files": ["**/*.test.ts"],
+      "env": {
+        "jest": true
+      }
     }
   ],
   "settings": {
@@ -27,6 +33,13 @@
     }
   },
   "rules": {
-    "import/first": 0
+    "import/first": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ]
   }
 }

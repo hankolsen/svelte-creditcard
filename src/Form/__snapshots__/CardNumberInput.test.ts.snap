@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardNumberInput test should render 1`] = `
+<body>
+  <div>
+    <label
+      for="cardNumber"
+    >
+      Card Number
+    </label>
+     
+    <input
+      class=" svelte-1eyahzb"
+      id="cardNumber"
+      maxlength="16"
+      name="cardNumber"
+    />
+     
+    
+  </div>
+</body>
+`;

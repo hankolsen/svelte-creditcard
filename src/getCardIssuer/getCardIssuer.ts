@@ -17,7 +17,7 @@ const getCreditCardIssuer = (entry: string) => {
     [CreditCardIssuers.VISA]: /^4/,
   };
 
-  let cardVendor;
+  let cardVendor: string;
   Object.entries(patterns).some(([vendor, regexp]) => {
     if (regexp.test(entry)) {
       cardVendor = vendor;
