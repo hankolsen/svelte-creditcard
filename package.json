@@ -9,7 +9,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "eslint": "eslint .",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
@@ -20,14 +21,16 @@
     "@testing-library/svelte": "^3.0.3",
     "@tsconfig/svelte": "^2.0.0",
     "@types/jest": "^26.0.23",
-    "eslint-import-resolver-alias": "^1.1.2",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-svelte3": "^3.2.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.6",
+    "prettier": "^2.3.2",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
