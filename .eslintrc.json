@@ -10,12 +10,7 @@
     "sourceType": "module"
   },
   "ignorePatterns": ["**/build/*"],
-  "plugins": [
-    "@typescript-eslint",
-    "svelte3",
-    "jest-dom",
-    "testing-library"
-  ],
+  "plugins": ["@typescript-eslint", "svelte3", "jest-dom", "testing-library"],
   "overrides": [
     {
       "files": ["*.svelte"],
@@ -39,12 +34,24 @@
   },
   "rules": {
     "import/first": 0,
+    "object-curly-newline": 0,
+    "no-param-reassign": 0,
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "_" }],
     "import/extensions": [
       "error",
       "ignorePackages",
       {
         "ts": "never"
       }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["!**/*.test.js", "!**/*.spec.js"] }
     ],
     "import/order": [
       "error",

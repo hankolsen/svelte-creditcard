@@ -15,7 +15,9 @@ export const formattedNumber = derived(
   getFormattedCardNumber,
 );
 export const logoSrc = derived([issuer, showLogo], ([$issuer, $showLogo]) => {
-  if ($showLogo && $issuer) {
-    return `logos/${$issuer}.svg`;
+  if (!$showLogo || !$issuer) {
+    return undefined;
   }
+
+  return `logos/${$issuer}.svg`;
 });
