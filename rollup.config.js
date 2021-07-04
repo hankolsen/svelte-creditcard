@@ -1,3 +1,4 @@
+import path from 'path';
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -7,7 +8,6 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import alias from '@rollup/plugin-alias';
-import path from 'path';
 
 const production = !process.env.ROLLUP_WATCH;
 const projectRootDir = path.resolve(__dirname);

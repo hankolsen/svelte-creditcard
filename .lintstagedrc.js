@@ -4,5 +4,5 @@ module.exports = {
     () => "tsc -p tsconfig.json --noEmit",
     "jest --bail --findRelatedTests",
   ],
-  "*.css": "stylelint",
+  "*.+(css|svelte)": "stylelint",
 };
