@@ -42,7 +42,7 @@ body {
 .wrapper {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 .card__face {
@@ -156,4 +156,31 @@ button {
 
 button:hover {
   background-color: hsl(210, 100%, 60%);
+}
+
+footer {
+  background: rgb(31, 41, 55);
+  color: rgb(209, 213, 219);
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github__link {
+  color: rgb(209, 213, 219);
+  text-decoration: none;
+}
+.github__link:hover {
+  color: rgb(255, 255, 255);
+}
+.github__link-content {
+  display: flex;
+  align-items: center;
+}
+.github__link-logo {
+  width: 24px;
+}
+.github__link-text {
+  margin-left: 5px;
 }
